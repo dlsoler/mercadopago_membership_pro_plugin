@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.0" type="osmplugin" group="payment">
+    <name>dls_mercadopago</name>
+    <title>Pasarela de pago para MercadoPago</title>
+    <author>Diego Soler</author>
+    <creationDate>September 14th 2019</creationDate>
+    <copyright>Copyright 2008 - 2019 Diego Soler</copyright>
+    <license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2</license>
+    <authorEmail>solerdiego@gmail.com</authorEmail>
+    <authorUrl>www.inteliar.com.ar</authorUrl>
+    <version>1.0.0</version>
+    <description>MercadoPago Redirect payment plugin for Membership Pro Extension</description>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_osmembership/elements">
+
+                <field type="spacer" name="mp_settings_page_spacer" label="MercadoPago settings&lt;hr/&gt;"/>
+                <field name="mode" type="list" label="Payment Mode" description="Select the Mercado Pago Sandbox Mode Or Live Mode">
+                    <option value="0">Sandbox Mode</option>
+                    <option value="1">Production Mode</option>
+                </field>
+    
+                <field name="production_access_token" type="text" size="75" label="Access Token de producción" description="Access token de MercadoPago para producción" default=""/>
+                <field name="testing_access_token" type="text" size="75" label="Access Token de prueba" description="Access token de MercadoPago para pruebas" default=""/>
+
+                <field name="back_urls_success" type="text" size="75" label="Back URL on success" description="URL de retorno de MercadoPago para pago exitoso" default=""/>
+                <field name="back_urls_pending" type="text" size="75" label="Back URL on pending" description="URL de retorno de MercadoPago para pago pendiente" default=""/>
+                <field name="back_urls_failure" type="text" size="75" label="Back URL on failure" description="URL de retorno de MercadoPago para pago fallido" default=""/>
+
+                <field type="spacer" name="redirect_page_spacer" label="Redirect Page&lt;hr style='border-color:lt-gray;'/&gt;"/>
+                <field name="redirect_text" type="textarea" rows="3" label="Redirect message" description="Texto a mostrar antes de la redirección" default="En unos instantes será redireccionado hacia el sitio de Mercado Pago"/>
+                <field name="redirect_nojs_text" type="textarea" rows="3" label="Manual Redirect message" description="Texto a mostrar junto al link de redirección" default="Si en 10 segundos no ha sido redireccionado hacia el sitio de Mercado Pago, por favor haga clic en:"/>
+                <field name="redirect_link_text" type="text" size="6" label="Redirect link text" description="Texto del link a Mercado Pago" default="Ir a MercadoPago"/>
+                <field name="redirect_link_title" type="text" size="6" label="Redirect link title" description="Título del link a Mercado Pago" default="Ir a MercadoPago"/>
+                <field name="redirect_timeout" type="number" size="6" label="Redirect timeout" description="Timeout para hacer la redirección a MercadoPago" default="5000"/>
+                <field name="default_failure_reason" type="text" size="75" label="Default error message" description="Mensaje de error por defecto" default="No se ha podio realizar el pago."/>
+
+                <field type="spacer" name="log_setting_spacer" label="Log settings&lt;hr/&gt;"/>
+                <field name="debug_log" type="list" label="Enable debug log" description="Write debug info to the log" default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+
+                <field name="ipn_log" type="list" label="Log IPN messages" description="This is only used for debug purpose when requested. Please set it to No unless requested by our support team" default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <files>
+        <filename>dls_mercadopago.php</filename>
+        <folder>mercadopago</folder>
+    </files>
+</install>
