@@ -21,7 +21,7 @@ const PLUGIN_NAME = 'dls_mercadopago';
 /**
  * Path of Joomla used for development
  */
-const OS_MEMBERSHIP_PRO_PLUGINS_PATH =`/var/www/asorarevista/components/com_osmembership/plugins`;
+const OS_MEMBERSHIP_PRO_PLUGINS_PATH =`/var/www/my-joomla-folder/components/com_osmembership/plugins`;
 
 const TESTING_USERS_FILENAME = 'testing_users.json';
 
